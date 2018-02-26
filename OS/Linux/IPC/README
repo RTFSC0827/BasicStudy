@@ -1,0 +1,4 @@
+该目录是Linux下IPC机制：
+ 1.信号量
+   gcc Sem.c -DUSE_SEM -o semDemo (带信号量)
+   gcc Sem.c -o semDemo_None (不带信号量)
