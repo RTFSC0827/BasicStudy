@@ -1,4 +1,24 @@
 该目录是Linux下IPC机制：
  1.信号量
-   gcc Sem.c -DUSE_SEM -o semDemo (带信号量)
-   gcc Sem.c -o semDemo_None (不带信号量)
+     编译：
+        gcc Sem.c -DUSE_SEM -o semDemo (带信号量)
+        gcc Sem.c -o semDemo_None (不带信号量)
+     测试：
+        在终端下执行如下指令：
+         $ semDemo 1 & semDemo
+         $ semDemo_None 1 & semDemo_None
+     结果：
+        使用信号量会依次输出进入临界区，退出临界区，不使用信号量则输出无规律。
+
+
+ 2.命名管道
+     编译：
+        gcc pipe.c -o pipeDemo
+     测试：
+       在终端中执行如下指令：
+         $ pipeDemo 1
+       在另一个终端中执行如下指令：
+         $ pipeDemo
+     结果：
+        在第一个终端下输入的数据会在第二个终端中打印出来。
+
